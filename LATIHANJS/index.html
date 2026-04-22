@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page with Show Password</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+            url('https://img.pikbest.com/photo/20251111/vibrant-autumn-park-pathway-lined-with-colorful-trees-and-fallen-leaves_12023535.jpg!bwr800');
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-page {
+            background: white;
+            padding: 2.5rem; 
+            border-radius: 12px; 
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+            color: #1c1e21;
+            font-size: 24px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 5px 0;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #1877f2;
+            box-shadow: 0 0 0 2px #e7f3ff;
+        }
+
+        .show-password-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: -5px; 
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #4b4f56;
+            cursor: pointer; 
+        }
+
+        .show-password-container input {
+            margin: 0 8px 0 0; 
+            cursor: pointer;
+            width: auto; 
+        }
+
+        button.btn-login {
+            width: 100%;
+            padding: 12px;
+            background-color: #1877f2; 
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button.btn-login:hover {
+            background-color: #166fe5;
+        }
+
+        .register {
+            margin-top: 20px;
+            font-size: 14px;
+            border-top: 1px solid #dddfe2;
+            padding-top: 20px;
+        }
+
+        .register a {
+            color: #1877f2;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-page">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Username" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+
+            <div class="show-password-container">
+                <input type="checkbox" id="showPasswordCheckbox">
+                <label for="showPasswordCheckbox">Show Password</label>
+            </div>
+
+            <button type="submit" class="btn-login">Login</button>
+        </form>
+        
+        <div class="register">
+            <p>Don't have an account? <a href="#">Register now</a></p>
+        </div>
+    </div>
+
+    <script>
+
+        const passwordInput = document.getElementById('password');
+        const showPasswordCheckbox = document.getElementById('showPasswordCheckbox');
+
+        showPasswordCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        });
+
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            const user = document.getElementById('username').value;
+            const pass = passwordInput.value; 
+            const validUsername = "ALIF";
+            const validPassword = "ALIFGACOR123";
+
+            if (user === validUsername && pass === validPassword) {
+                alert("Login Berhasil");
+            } else {
+                alert("Login Gagal Username atau Password Salah");
+            }
+        });
+    </script>
+
+</body>
+</html>
