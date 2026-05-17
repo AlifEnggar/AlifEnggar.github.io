@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Calculator</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="kalkulator.js">
+
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="calculator">
+
+      <div class="display">
+        <div class="history-mini" id="miniHistory"></div>
+        <div class="result" id="result">0</div>
+      </div>
+
+      <div class="buttons">
+
+        <button class="clear" onclick="clearDisplay()">AC</button>
+        <button class="special" onclick="deleteLast()">⌫</button>
+        <button class="special" onclick="append('%')">%</button>
+        <button class="operator" onclick="append('/')">÷</button>
+
+        <button class="number" onclick="append('7')">7</button>
+        <button class="number" onclick="append('8')">8</button>
+        <button class="number" onclick="append('9')">9</button>
+        <button class="operator" onclick="append('*')">×</button>
+
+        <button class="number" onclick="append('4')">4</button>
+        <button class="number" onclick="append('5')">5</button>
+        <button class="number" onclick="append('6')">6</button>
+        <button class="operator" onclick="append('-')">−</button>
+
+        <button class="number" onclick="append('1')">1</button>
+        <button class="number" onclick="append('2')">2</button>
+        <button class="number" onclick="append('3')">3</button>
+        <button class="operator" onclick="append('+')">+</button>
+
+        <button class="number zero" onclick="append('0')">0</button>
+        <button class="number" onclick="append('.')">.</button>
+        <button class="equal" onclick="calculate()">=</button>
+
+      </div>
+    </div>
+
+    <!-- HISTORY -->
+    <div class="history-box">
+
+      <div class="history-top">
+        <h2>Riwayat</h2>
+        <span class="clear-history" onclick="clearHistory()">
+          Hapus Semua
+        </span>
+      </div>
+
+      <div class="history-list" id="historyList">
+        <p style="color:#94a3b8">
+          Belum ada perhitungan
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="kalkulator.js"></script>
+</body>
+</html>
